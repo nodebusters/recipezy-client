@@ -11,24 +11,23 @@ import Ingredients from './components/Ingredients'
 class App extends Component {
   render() {
     return (
-      <Router>
-        <React.Fragment>
-          <nav>
-            <li className="navigation-links"> <Link to="/login">Login</Link> </li>
-            <li className="navigation-links"><Link to="/register">Register</Link> </li>
-            <li className="navigation-links"><Link to="/ingredients">Ingredients</Link> </li>
-          </nav>
+
+      // <Router>
+      //   <React.Fragment>
+      //     <nav>
+      //       <li className="navigation-links"> <Link to="/login">Login</Link> </li>
+      //       <li className="navigation-links"><Link to="/register">Register</Link> </li>
+      //       <li className="navigation-links"><Link to="/ingredients">Ingredients</Link> </li>
+      //     </nav>
           
-          {/* //TODO: implement login and register in the api.  */}
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/ingredients" component={Ingredients} />
-
-
-        </React.Fragment>
-      </Router>
-
+      //     {/* //TODO: implement login and register in the api.  */}
+      //     <Route exact path="/login" component={LogIn} />
+      //     <Route exact path="/register" component={Register} />
+      //     <Route exact path="/" component={Home} />
+      //     <Route exact path="/ingredients" component={Ingredients} />
+      //   </React.Fragment>
+      // </Router>
+      <h1>Test</h1>
     );
   }
 }
