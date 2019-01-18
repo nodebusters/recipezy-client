@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import './App.css';
+
+import Home from './components/Home'
+import Ingredients from './components/Ingredients'
 
 class App extends Component {
-  state = {
-    ingredients: []
-  }
-  componentDidMount() {
-    const url = process.env.REACT_APP_API_URL;
-    console.log(url)
-    axios.get(url)
-      .then(resp => {
-        console.log(resp.data)
-        this.setState({
-          ingredients: resp.data
-        })
-        console.log(this.state)
-      })
-  }
   render() {
     return (
-      <div>
-        {this.state.ingredients.map(ingredient => {
-          return <h1>{ingredient.name}</h1>
-        })}
-      </div>
+      <Router>
+        <React.Fragment>
+          <nav>
+            <li className="navigation-links"><Link to="/">Home</Link> </li>
+            <li className="navigation-links"><Link to="/ingredients">Ingredients</Link> </li>
+          </nav>
+          
+          {/* //TODO: implement login and register in the api.  */}
+          <Route exact path="/" component={Home} />
+          <Route exact path="/ingredients" component={Ingredients} />
+
+
+        </React.Fragment>
+      </Router>
+
     );
   }
 }
