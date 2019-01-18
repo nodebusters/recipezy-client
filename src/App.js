@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 
 class App extends Component {
@@ -7,7 +6,8 @@ class App extends Component {
     ingredients: []
   }
   componentDidMount() {
-    const url = 'http://localhost:5000';
+    const url = process.env.REACT_APP_API_URL;
+    console.log(url)
     axios.get(url)
       .then(resp => {
         console.log(resp.data)
